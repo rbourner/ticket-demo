@@ -1,0 +1,10 @@
+<kmodule xmlns="http://www.drools.org/xsd/kmodule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <kbase name="BellKBase" default="true" eventProcessingMode="stream" equalsBehavior="identity">
+    <ksession name="BellKieSession" type="stateless" default="true" clockType="realtime">
+      <listeners>
+        <agendaEventListener type="com.bell.brms.listeners.DecisionManagerAgendaListener"/>
+        <processEventListener type="com.bell.brms.listeners.DecisionManagerProcessListener"/>
+      </listeners>
+    </ksession>
+  </kbase>
+</kmodule>

@@ -1,0 +1,23 @@
+package com.bell.brms;
+
+rule "Default Priority 1"
+ruleflow-group "ETURuleflowGroup"
+enabled false
+when
+    $t: TroubleTicketBell(priority == null)
+then
+    modify ($t) {
+        setPriority("HIGH");
+    }
+end
+
+rule "Default Priority 2"
+ruleflow-group "NonETURuleflowGroup"
+enabled false
+when
+    $t: TroubleTicketBell(priority == null)
+then
+    modify ($t) {
+        setPriority("LOW");
+    }
+end
